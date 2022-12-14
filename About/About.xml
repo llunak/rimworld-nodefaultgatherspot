@@ -19,7 +19,7 @@
     </loadAfter>
     <description>This mod changes the default value of the "Gather spot" setting for all relevant buildings to disabled. Only those building where you enable it explicitly will be used by pawns for related activities such as recreation.
 
-GitHub: https://github.com/llunak/rimworld-nodefaultgathersSpot
+GitHub: https://github.com/llunak/rimworld-nodefaultgatherspot
 
 </description>
 </ModMetaData>
