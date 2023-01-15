@@ -19,16 +19,13 @@ namespace NoDefaultGatherSpot
     [HarmonyPatch(typeof(CompGatherSpot))]
     public static class CompGatherSpot_Patch
     {
-        [HarmonyPrefix]
-        [HarmonyPatch(nameof(PostSpawnSetup))]
-        public static void PostSpawnSetup(CompGatherSpot __instance, bool respawningAfterLoad)
+        [HarmonyPostfix]
+        [HarmonyPatch(MethodType.Constructor)]
+        public static void Constructor(CompGatherSpot __instance)
         {
-            if (!respawningAfterLoad)
-            {
-                // __instance.active = false;
-                FieldInfo fi = AccessTools.Field(typeof(CompGatherSpot),"active");
-                fi.SetValue(__instance, false);
-            }
+            // __instance.active = false;
+            FieldInfo fi = AccessTools.Field(typeof(CompGatherSpot),"active");
+            fi.SetValue(__instance, false);
         }
     }
 }
